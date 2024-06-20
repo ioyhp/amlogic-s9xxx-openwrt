@@ -140,6 +140,10 @@ custom_packages() {
 
     # Download other luci-app-xxx
     # ......
+    wget --no-check-certificate https://github.com/gSpotx2f/packages-openwrt/raw/master/current/internet-detector_1.3.0-1_all.ipk
+    wget --no-check-certificate https://github.com/gSpotx2f/packages-openwrt/raw/master/current/luci-app-internet-detector_1.3.0-r1_all.ipk
+    wget --no-check-certificate https://github.com/vernesong/OpenClash/raw/package/master/luci-app-openclash_0.46.014-beta_all.ipk
+    wget --no-check-certificate https://github.com/r3yr3/reyre-package/raw/main/luci-app-netmonitor/luci-app-netmonitor_2.0_all.ipk
 
     sync && sleep 3
     echo -e "${INFO} [ packages ] directory status: $(ls -al 2>/dev/null)"
@@ -201,7 +205,7 @@ rebuild_firmware() {
         luci-mod-status luci-mod-system luci-proto-3g luci-proto-bonding luci-proto-ipip luci-proto-ipv6 \
         luci-proto-ncm luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay \
         \
-        luci-app-amlogic luci-i18n-amlogic-zh-cn \
+        internet-detector luci-app-internet-detector luci-app-openclash luci-app-netmonitor \
         \
         ${config_list} \
         "
